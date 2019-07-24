@@ -36,16 +36,16 @@ class Editor extends Field
         return;
     }
 
-    var E = window.wangEditor
+    var E = window.wangEditor;
     var editor = new E('#{$this->id}');
     
-    editor.customConfig.uploadImgParams = {_token: '$token'}
+    editor.customConfig.uploadImgParams = {_token: '$token'};
     
-    Object.assign(editor.customConfig, {$config})
+    Object.assign(editor.customConfig, {$config});
     
     editor.customConfig.onchange = function (html) {
         $('#input-$id').val(html);
-    }
+    };
     editor.create();
     
     $('#{$this->id}').attr('initialized', 1);
